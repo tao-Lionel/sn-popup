@@ -5,6 +5,7 @@ import { createReadableStreamFromReadable } from "@remix-run/node";
 import { isbot } from "isbot";
 import { addDocumentResponseHeaders } from "./shopify.server";
 
+
 const ABORT_DELAY = 5000;
 
 export default async function handleRequest(

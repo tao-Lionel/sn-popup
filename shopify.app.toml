@@ -3,7 +3,7 @@
 client_id = "bc81c38c8bc4242ff9dc2a81092990f2"
 name = "sn-popup"
 handle = "sn-popup"
-application_url = "https://miles-washington-sacred-instrumental.trycloudflare.com"
+application_url = "https://partial-brochure-faqs-if.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://miles-washington-sacred-instrumental.trycloudflare.com/auth/callback",
-  "https://miles-washington-sacred-instrumental.trycloudflare.com/auth/shopify/callback",
-  "https://miles-washington-sacred-instrumental.trycloudflare.com/api/auth/callback"
+  "https://partial-brochure-faqs-if.trycloudflare.com/auth/callback",
+  "https://partial-brochure-faqs-if.trycloudflare.com/auth/shopify/callback",
+  "https://partial-brochure-faqs-if.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
