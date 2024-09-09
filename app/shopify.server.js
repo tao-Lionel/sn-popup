@@ -7,7 +7,15 @@ import {
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
 import { restResources } from "@shopify/shopify-api/rest/admin/2024-07";
 import prisma from "./db.server";
+// import express from "express";
+// import scriptTagRoutes from "./routes/scripttag"; // 引入 ScriptTag 路由
 
+// const app = express();
+
+// app.use(express.json());
+// const express = require('express');
+// const Shopify = require('@shopify/shopify-api').default;
+// const app = express();
 
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY,
@@ -27,11 +35,7 @@ const shopify = shopifyApp({
     : {}),
 });
 
-
-
-
-
-
+// app.use(scriptTagRoutes);
 
 export default shopify;
 export const apiVersion = ApiVersion.July24;

@@ -3,7 +3,7 @@
 client_id = "bc81c38c8bc4242ff9dc2a81092990f2"
 name = "sn-popup"
 handle = "sn-popup"
-application_url = "https://partial-brochure-faqs-if.trycloudflare.com"
+application_url = "https://alive-ryan-howto-infinite.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,write_script_tags"
 
 [auth]
 redirect_urls = [
-  "https://partial-brochure-faqs-if.trycloudflare.com/auth/callback",
-  "https://partial-brochure-faqs-if.trycloudflare.com/auth/shopify/callback",
-  "https://partial-brochure-faqs-if.trycloudflare.com/api/auth/callback"
+  "https://alive-ryan-howto-infinite.trycloudflare.com/auth/callback",
+  "https://alive-ryan-howto-infinite.trycloudflare.com/auth/shopify/callback",
+  "https://alive-ryan-howto-infinite.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
