@@ -20,6 +20,9 @@ const allowedOrigins = [
   "https://dispute-refused-feb-constructed.trycloudflare.com",
   "https://hh-ellis-buses-proudly.trycloudflare.com",
   "https://permit-belize-begin-opening.trycloudflare.com",
+  "https://bedford-natural-rooms-charges.trycloudflare.com",
+  "https://vulnerable-suggests-pork-claire.trycloudflare.com",
+  "https://dot-posted-om-comics.trycloudflare.com",
 ];
 app.use(
   cors({

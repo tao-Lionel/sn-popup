@@ -80,7 +80,7 @@ export default function CreatePopup() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://b5b3-107-167-18-99.ngrok-free.app/api/add-script-tag",
+        "https://b5b3-107-167-18-99.ngrok-free.app/api/shopify",
         {
           method: "POST",
           headers: {
@@ -88,7 +88,7 @@ export default function CreatePopup() {
           },
           body: JSON.stringify({
             shop: "lionel-tao.myshopify.com",
-            accessToken: "bc81c38c8bc4242ff9dc2a81092990f2",
+            // accessToken: r,
           }),
         },
       );
