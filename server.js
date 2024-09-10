@@ -1,13 +1,13 @@
 import express from "express";
 import "@shopify/shopify-api/adapters/node";
-import { shopifyApi } from "@shopify/shopify-api";
+
 import scriptTagRoutes from "./server/routes/scripttag.js";
 import dotenv from "dotenv";
 import cors from "cors";
 
 dotenv.config();
 const app = express();
-
+app.use(express.static("public"));
 app.use(express.json());
 
 const allowedOrigins = [
@@ -15,6 +15,11 @@ const allowedOrigins = [
   "https://ae72-104-194-206-225.ngrok-free.app",
   "https://charges-archived-room-current.trycloudflare.com",
   "https://alive-ryan-howto-infinite.trycloudflare.com",
+  "https://i-purchases-representations-look.trycloudflare.com",
+  "https://story-orbit-anonymous-stand.trycloudflare.com",
+  "https://dispute-refused-feb-constructed.trycloudflare.com",
+  "https://hh-ellis-buses-proudly.trycloudflare.com",
+  "https://permit-belize-begin-opening.trycloudflare.com",
 ];
 app.use(
   cors({
@@ -31,28 +36,8 @@ app.use(
   }),
 );
 
-console.log("process.env.SHOPIFY_API_KEY", process.env.SHOPIFY_API_KEY);
-const shopify = shopifyApi({
-  // The next 4 values are typically read from environment variables for added security
-  apiKey: process.env.SHOPIFY_API_KEY,
-  apiSecretKey: process.env.SHOPIFY_API_SECRET,
-  scopes: process.env.SCOPES?.split(","),
-  hostName: process.env.HOST?.replace(/https:\/\//, ""),
-  isEmbeddedApp: true,
-});
-
-// shopifyApi.Context.initialize({
-//   API_KEY: process.env.SHOPIFY_API_KEY,
-//   API_SECRET_KEY: process.env.SHOPIFY_API_SECRET,
-//   SCOPES: process.env.SCOPES.split(","),
-//   HOST_NAME: process.env.HOST.replace(/https:\/\//, ""),
-//   IS_EMBEDDED_APP: true,
-//   API_VERSION: "2023-04",
-//   SESSION_STORAGE: new shopifyApi.Session.MemorySessionStorage(),
-// });
-
 app.use(scriptTagRoutes);
 
-app.listen(process.env.PORT || 3030, () => {
-  console.log(`Server running on port ${process.env.PORT || 3030}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server running on port ${process.env.PORT || 3000}`);
 });

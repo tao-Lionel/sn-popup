@@ -52,16 +52,44 @@ export default function CreatePopup() {
   const [showToast, setShowToast] = useState(false);
   const [toastContent, setToastContent] = useState("");
 
+  const createScriptTag = async (accessToken, shop) => {
+    const scriptTagData = {
+      script_tag: {
+        event: "onload",
+        src: "https://b5b3-107-167-18-99.ngrok-free.app/popup.js", // 替换为你的 JS 文件 URL
+      },
+    };
+
+    const response = await fetch(
+      `https://${shop}.myshopify.com/admin/api/2024-07/script_tags.json`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shopify-Access-Token": accessToken,
+        },
+        body: JSON.stringify(scriptTagData),
+      },
+    );
+
+    const data = await response.json();
+    return data;
+  };
+
   async function handleSave() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://ae72-104-194-206-225.ngrok-free.app/api/add-script-tag",
+        "https://b5b3-107-167-18-99.ngrok-free.app/api/add-script-tag",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify({
+            shop: "lionel-tao.myshopify.com",
+            accessToken: "bc81c38c8bc4242ff9dc2a81092990f2",
+          }),
         },
       );
 
@@ -79,6 +107,13 @@ export default function CreatePopup() {
     } finally {
       setIsLoading(false);
     }
+    // createScriptTag("e05b82e45778d89b58020da8d5ad4e9d-1725959256", "lionel-tao")
+    //   .then((data) => {
+    //     console.log("ScriptTag created:", data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error creating ScriptTag:", error);
+    //   });
   }
   return (
     <Page>
