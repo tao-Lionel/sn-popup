@@ -1,6 +1,7 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import * as path from "path";
 
 // Related: https://github.com/remix-run/remix/issues/2835#issuecomment-1144102176
 // Replace the HOST env var with SHOPIFY_APP_URL so that it doesn't break the remix server. The CLI will eventually
@@ -41,6 +42,23 @@ export default defineConfig({
     fs: {
       // See https://vitejs.dev/config/server-options.html#server-fs-allow for more information
       allow: ["app", "node_modules"],
+    },
+    proxy: {
+      "/API": {
+        target: "http://localhost:5173",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/API/, ""),
+      },
+    },
+  },
+  resolve: {
+    // 设置别名
+    alias: {
+      "@": path.resolve(__dirname, "app"),
+      api: path.resolve(__dirname, "app/api"),
+      plugins: path.resolve(__dirname, "app/plugins"),
+      types: path.resolve(__dirname, "app/types"),
+      config: path.resolve(__dirname, "app/config"),
     },
   },
   plugins: [

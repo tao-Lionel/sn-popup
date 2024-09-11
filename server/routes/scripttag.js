@@ -1,16 +1,9 @@
 import "@shopify/shopify-api/adapters/node";
-// import { Shopify } from "@shopify/shopify-api";
 import express from "express";
 import shopify from "../../shopify.js";
-// import fetch from "node-fetch";
 import axios from "axios";
 
 const router = express.Router();
-
-// const r = await fetch(
-//   "https://lionel-tao.myshopify.com/admin/oauth/authorize?client_id=bc81c38c8bc4242ff9dc2a81092990f2&scope=write_script_tags&redirect_uri=https://bedford-natural-rooms-charges.trycloudflare.com/auth/callback",
-// );
-// console.log("r", r);
 
 // Shopify API 脚本标签请求
 const createScriptTag = async (shop, accessToken) => {
@@ -24,18 +17,6 @@ const createScriptTag = async (shop, accessToken) => {
   };
 
   try {
-    // const response = await fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "X-Shopify-Access-Token": accessToken,
-    //   },
-    //   body: JSON.stringify(scriptTagData),
-    // });
-
-    // const data = await response.json();
-    // return data;
-
     const response = await axios.post(url, scriptTagData, {
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +73,7 @@ router.get("/api/auth/callback", async (req, res) => {
     console.log(`Access token: ${accessToken}`);
 
     // 成功后可以做其他操作，如获取商店产品等
-    res.send(`Access token: ${accessToken}`);
+    // res.send(`Access token: ${accessToken}`);
 
     try {
       const result = await createScriptTag(shop, accessToken);

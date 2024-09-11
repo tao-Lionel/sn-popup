@@ -3,7 +3,7 @@
 client_id = "bc81c38c8bc4242ff9dc2a81092990f2"
 name = "sn-popup"
 handle = "sn-popup"
-application_url = "https://dot-posted-om-comics.trycloudflare.com"
+application_url = "https://shipments-freeze-northeast-booking.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_script_tags,write_products,write_script_tags"
 
 [auth]
 redirect_urls = [
-  "https://dot-posted-om-comics.trycloudflare.com/auth/callback",
-  "https://dot-posted-om-comics.trycloudflare.com/auth/shopify/callback",
-  "https://dot-posted-om-comics.trycloudflare.com/api/auth/callback"
+  "https://shipments-freeze-northeast-booking.trycloudflare.com/auth/callback",
+  "https://shipments-freeze-northeast-booking.trycloudflare.com/auth/shopify/callback",
+  "https://shipments-freeze-northeast-booking.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

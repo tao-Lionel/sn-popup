@@ -21,9 +21,9 @@ export default function App() {
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       <NavMenu>
         <Link to="/app" rel="home">
-          Home
+          Home scriptTag 示例
         </Link>
-        <Link to="/app/additional">Additional page</Link>
+        <Link to="/app/request-example">请求封装示例</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>

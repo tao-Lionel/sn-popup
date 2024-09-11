@@ -23,6 +23,9 @@ const allowedOrigins = [
   "https://bedford-natural-rooms-charges.trycloudflare.com",
   "https://vulnerable-suggests-pork-claire.trycloudflare.com",
   "https://dot-posted-om-comics.trycloudflare.com",
+  "https://synthetic-stickers-early-berry.trycloudflare.com",
+  "https://lionel-tao.myshopify.com/admin/oauth/authorize",
+  "https://told-thy-interference-awesome.trycloudflare.com",
 ];
 app.use(
   cors({
